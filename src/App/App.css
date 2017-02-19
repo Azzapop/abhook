@@ -25,13 +25,139 @@
   left: 50%;
 }
 
-/* Animations to enlarge squares */
-.home-square.top-left.enlarged {
-  animation-name: topLeftEnlarged;
+/* Offscreen to splitscreen */
+.home-square.top-left.off-split {
+  animation-name: topLeftOffSplit;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes topLeftEnlarged {
+@keyframes topLeftOffSplit {
+  0% {
+    height: 0vh;
+    width: 0vw;
+    left: 0;
+    bottom: 100%;
+  }
+  25% {
+    height: 0vh;
+    width: 0vw;
+    left: 0;
+    bottom: 100%;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    left: 12.5%;
+    bottom: 62.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    left: 0;
+    bottom: 50%;
+  }
+}
+.home-square.top-right.off-split {
+  animation-name: topRightOffSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes topRightOffSplit {
+  0% {
+    height: 0vh;
+    width: 0vw;
+    left: 100%;
+    bottom: 100%;
+  }
+  25% {
+    height: 0vh;
+    width: 0vw;
+    left: 100%;
+    bottom: 100%;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    left: 62.5%;
+    bottom: 62.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    left: 50%;
+    bottom: 50%;
+  }
+}
+.home-square.bottom-left.off-split {
+  animation-name: bottomLeftOffSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes bottomLeftOffSplit {
+  0% {
+    height: 0vh;
+    width: 0vw;
+    left: 0;
+    bottom: 0;
+  }
+  25% {
+    height: 0vh;
+    width: 0vw;
+    left: 0;
+    bottom: 0;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    left: 12.5%;
+    bottom: 12.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    left: 0;
+    bottom: 0;
+  }
+}
+.home-square.bottom-right.off-split {
+  animation-name: bottomRightOffSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes bottomRightOffSplit {
+  0% {
+    height: 0vh;
+    width: 0vw;
+    left: 100%;
+    bottom: 0;
+  }
+  25% {
+    height: 0vh;
+    width: 0vw;
+    left: 100%;
+    bottom: 0;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    left: 62.5%;
+    bottom: 12.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    left: 50%;
+    bottom: 0;
+  }
+}
+
+/* Splitscreen to fullscreen */
+.home-square.top-left.split-full {
+  animation-name: topLeftSplitFull;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes topLeftSplitFull {
   18.75% {
     height: 25vh;
     width: 25vw;
@@ -51,12 +177,12 @@
     left: 0;
   }
 }
-.home-square.top-right.enlarged {
-  animation-name: topRightEnlarged;
+.home-square.top-right.split-full {
+  animation-name: topRightSplitFull;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes topRightEnlarged {
+@keyframes topRightSplitFull {
   18.75% {
     height: 25vh;
     width: 25vw;
@@ -76,12 +202,12 @@
     left: 0;
   }
 }
-.home-square.bottom-left.enlarged {
-  animation-name: bottomLeftEnlarged;
+.home-square.bottom-left.split-full {
+  animation-name: bottomLeftSplitFull;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes bottomLeftEnlarged {
+@keyframes bottomLeftSplitFull {
   18.75% {
     height: 25vh;
     width: 25vw;
@@ -101,12 +227,12 @@
     left: 0;
   }
 }
-.home-square.bottom-right.enlarged {
-  animation-name: bottomRightEnlarged;
+.home-square.bottom-right.split-full {
+  animation-name: bottomRightSplitFull;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes bottomRightEnlarged {
+@keyframes bottomRightSplitFull {
   18.75% {
     height: 25vh;
     width: 25vw;
@@ -127,13 +253,139 @@
   }
 }
 
-/* Animations to make squares inactive */
-.home-square.top-left.inactive {
-  animation-name: topLeftInactive;
+/* Fullscreen to splitscreen */
+.home-square.top-left.full-split {
+  animation-name: topLeftFullSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes topLeftFullSplit {
+  0% {
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+  25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 37.5%;
+    left: 37.5%;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 62.5%;
+    left: 12.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    bottom: 50%;
+    left: 0;
+  }
+}
+.home-square.top-right.full-split {
+  animation-name: topRightFullSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes topRightFullSplit {
+  0% {
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+  25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 37.5%;
+    left: 37.5%;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 62.5%;
+    left: 62.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    bottom: 50%;
+    left: 50%;
+  }
+}
+.home-square.bottom-left.full-split {
+  animation-name: bottomLeftFullSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes bottomLeftFullSplit {
+  0% {
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+  25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 37.5%;
+    left: 37.5%;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 12.5%;
+    left: 12.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    bottom: 0;
+    left: 0;
+  }
+}
+.home-square.bottom-right.full-split {
+  animation-name: bottomRightFullSplit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes bottomRightFullSplit {
+  0% {
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+  25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 37.5%;
+    left: 37.5%;
+  }
+  81.25% {
+    height: 25vh;
+    width: 25vw;
+    bottom: 12.5%;
+    left: 62.5%;
+  }
+  100% {
+    height: 50vh;
+    width: 50vw;
+    bottom: 0;
+    left: 50%;
+  }
+}
+
+/* Splitscreen to offscreen */
+.home-square.top-left.split-off {
+  animation-name: topLeftSplitOff;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
 }
-@keyframes topLeftInactive {
+@keyframes topLeftSplitOff {
   25% {
     height: 25vh;
     width: 25vw;
@@ -147,12 +399,12 @@
     left: 0;
   }
 }
-.home-square.top-right.inactive {
-  animation-name: topRightInactive;
+.home-square.top-right.split-off {
+  animation-name: topRightSplitOff;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
 }
-@keyframes topRightInactive {
+@keyframes topRightSplitOff {
   25% {
     height: 25vh;
     width: 25vw;
@@ -166,12 +418,12 @@
     left: 100%;
   }
 }
-.home-square.bottom-left.inactive {
-  animation-name: bottomLeftInactive;
+.home-square.bottom-left.split-off {
+  animation-name: bottomLeftSplitOff;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
 }
-@keyframes bottomLeftInactive {
+@keyframes bottomLeftSplitOff {
   25% {
     height: 25vh;
     width: 25vw;
@@ -185,12 +437,12 @@
     left: 0%;
   }
 }
-.home-square.bottom-right.inactive {
-  animation-name: bottomRightInactive;
+.home-square.bottom-right.split-off {
+  animation-name: bottomRightSplitOff;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
 }
-@keyframes bottomRightInactive {
+@keyframes bottomRightSplitOff {
   25% {
     height: 25vh;
     width: 25vw;
