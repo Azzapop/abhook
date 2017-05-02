@@ -1,0 +1,35 @@
+// Custom colours
+$white: #FFF;
+$black: #000;
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: $white;
+  margin: 0px;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.header {
+  height: 200px;
+  border-bottom: 1px $black solid;
+}
+
+.body {
+  padding-bottom: 200px; // height of .footer
+}
+
+.footer {
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px $black solid;
+}

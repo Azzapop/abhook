@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <p>Home Page</p>
+      <p>Blog</p>
     );
   }
 }
