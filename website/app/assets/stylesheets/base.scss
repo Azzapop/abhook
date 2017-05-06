@@ -1,6 +1,7 @@
 // Custom colours
 $white: #FFF;
 $black: #000;
+$hover-background: #F2F2F2;
 
 html, body {
   height: 100%;
@@ -20,14 +21,12 @@ body {
 }
 
 .header {
-  height: 100px;
   border-bottom: 1px $black solid;
   margin-bottom: 20px;
 }
 
 .body {
-  top: 121px; // height of .header
-  bottom: 120px; // height of .footer
+  margin-top: 100px;
   overflow: scroll;
 }
 

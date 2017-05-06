@@ -1,12 +1,15 @@
-nav.nav.bar.thick
-  ul
+nav.nav.bar.thick.fixed
+  ul.navbar
     li.collapse
       a.menu href="#"
         = fa_icon('bars')
+    .personal-brand
+      a href="#"
+        img.img src="https://avatars3.githubusercontent.com/u/4386657?v=3&s=40"
+        span.name Aaron Hook
     li
-      = link_to "Portfolio", root_path
+      a href="#{ root_path }" class="#{ 'active' if current_page?(root_path) }" Portfolio
     li
-      = link_to "Contact", contact_path
+      a href="#{ contact_path }" class="#{ 'active' if current_page?(contact_path) }" Contact
     li
-      = link_to "Blog", blog_path
-
+      a href="#{ blog_path }" class="#{ 'active' if current_page?(blog_path) }" Blog

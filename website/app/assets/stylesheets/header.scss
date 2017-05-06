@@ -1,0 +1,78 @@
+@media (min-width: 800px) {
+  .navbar > li > a.active {
+    border-bottom: 1px solid $black;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .navbar > li > a {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .navbar > li > a:hover {
+    background-color: $white !important;
+    border-bottom: 1px solid $black;
+  }
+
+  .navbar > li {
+    order: 1;
+  }
+
+  .personal-brand {
+    order: 2;
+    margin-left: auto !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar > li > a.active {
+    background-color: $hover-background;
+  }
+
+  .collapse {
+    display: inline-block !important;
+  }
+}
+
+.personal-brand {
+  margin-left: auto;
+  float: right !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar > .personal-brand > a {
+  padding: 2px 5px !important;
+  margin-right: 25px;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+  .navbar > .personal-brand > a {
+    margin: 8px 25px !important;
+  }
+}
+
+.personal-brand > a > img {
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  margin-right: 5px;
+  border-radius: 5px;
+  vertical-align: bottom;
+}
+
+.personal-brand > a > span.name {
+  font-size: 13px;
+}
