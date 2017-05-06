@@ -1,4 +1,12 @@
-.navbar
-  = link_to "Portfolio", root_path
-  = link_to "Contact", contact_path
-  = link_to "Blog", blog_path
+nav.nav.bar.thick
+  ul
+    li.collapse
+      a.menu href="#"
+        = fa_icon('bars')
+    li
+      = link_to "Portfolio", root_path
+    li
+      = link_to "Contact", contact_path
+    li
+      = link_to "Blog", blog_path
+
