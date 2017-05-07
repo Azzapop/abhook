@@ -1,1 +1,8 @@
-p footer
+p.date.left
+  / TODO convert to react component for dynamic time
+  = fa_icon('calendar', text: Date.today.strftime('%a, %d %B, %Y'))
+.flinks.right
+  a target="_blank" href="https://www.linkedin.com/in/aaron-hook/"
+    = fa_icon('linkedin-square lg', text: 'LinkedIn')
+  a target="_blank" href="https://github.com/Azzapop"
+    = fa_icon('github-square lg', text: 'Github')

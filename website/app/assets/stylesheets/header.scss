@@ -45,7 +45,6 @@
 
 .personal-brand {
   margin-left: auto;
-  float: right !important;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,7 +59,7 @@
 
 @media (max-width: 800px) {
   .navbar > .personal-brand > a {
-    margin: 8px 25px !important;
+    margin: 6px 25px !important;
   }
 }
 
