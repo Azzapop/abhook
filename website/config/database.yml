@@ -7,11 +7,11 @@ default: &default
 
 development:
   <<: *default
-  database: cfa-website_development
+  database: personal-website_development
 
 test:
   <<: *default
-  database: cfa-website_test
+  database: personal-website_test
 
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
