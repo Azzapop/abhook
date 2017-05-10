@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'portfolio#contact'
   get 'blog', to: 'portfolio#blog'
+
+  post 'enquiry', to: 'enquiry#create'
 end
