@@ -4,5 +4,9 @@ FactoryGirl.define do
   factory :enquiry do
     email "test@test.com"
     message "Cookie formula one grand prix, footy flemington racecourse secret laneway bars movida the borek woman, melbourne cricket ground dandenong victoria street dodgies."
+
+    factory :invalid_enquiry do
+      email nil
+    end
   end
 end
