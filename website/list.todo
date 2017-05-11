@@ -1,0 +1,6 @@
+app/assets/webpack/webpack-bundle.js
+app/views/shared/_footer.slim
+spec/controllers/enquiry_controller_spec.rb
+
+
+TODO Update procfile.dev
