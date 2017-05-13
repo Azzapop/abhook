@@ -12,6 +12,5 @@
     "test": "rspec"
   },
   "dependencies": {
-    "axios": "^0.16.1"
   }
 }
