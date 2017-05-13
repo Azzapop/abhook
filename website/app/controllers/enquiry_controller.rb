@@ -5,8 +5,8 @@ class EnquiryController < ApplicationController
     if e.save
       render json: { status: :success }
     else
-      errors = e.errors.inject([]) { |arr, err| arr << err[1]; arr }
-      render json: { status: :error, errors: errors }
+      _errors = e.errors.inject([]) { |arr, err| arr << err[1]; arr }
+      render status: 400, json: { status: :error, errors: _errors }
     end
   end
 

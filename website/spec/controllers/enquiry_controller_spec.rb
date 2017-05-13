@@ -9,6 +9,10 @@ RSpec.describe EnquiryController, type: :controller do
           process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:enquiry) }
         }.to change(Enquiry, :count).by(1)
       end
+      it 'returns with status 200' do
+        process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:enquiry) }
+        expect(response.status).to eq(200)
+      end
       it 'returns a json object containing status => success' do
         expected_response = { status: 'success' }
         process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:enquiry) }
@@ -21,6 +25,10 @@ RSpec.describe EnquiryController, type: :controller do
         expect {
           process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:invalid_enquiry) }
         }.to_not change(Enquiry, :count)
+      end
+      it 'returns with status 400' do
+        process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:invalid_enquiry) }
+        expect(response.status).to eq(400)
       end
       it 'returns a json object containing status => error' do
         expected_response = { status: 'error' }
