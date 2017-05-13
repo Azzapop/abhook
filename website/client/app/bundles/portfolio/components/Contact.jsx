@@ -45,7 +45,13 @@ class App extends Component {
     const _this = this;
     query.then(function(response) {
       const { data } = response;
-      _this.setState({ success: data.success });
+      _this.setState({
+        success: data.success,
+        enquiry: {
+          email: '',
+          message: ''
+        }
+      });
     }).catch(function(error) {
       const { data } = error.response;
       _this.setState({
