@@ -4,7 +4,13 @@
   margin-right: auto;
 }
 
+@media (max-width: 800px) {
+  .enquiry-form {
+    width: 75%;
+  }
+}
+
 input[type=text],
 textarea {
-  width: 100%;
+  width: calc(100% - 26px); // 26px = width of padding + border
 }
