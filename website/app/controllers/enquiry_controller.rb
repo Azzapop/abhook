@@ -3,10 +3,10 @@ class EnquiryController < ApplicationController
   def create
     e = Enquiry.new(enquiry_params)
     if e.save
-      render json: { status: :success }
+      render json: { success: true }
     else
-      _errors = e.errors.inject([]) { |arr, err| arr << err[1]; arr }
-      render status: 400, json: { status: :error, errors: _errors }
+      errors = e.errors.inject(Hash.new { |h, k| h[k] = [] }) { |hash, err| hash[err[0]] << err[1]; hash }
+      render status: 400, json: { success: false, errors: errors }
     end
   end
 

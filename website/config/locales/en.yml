@@ -6,3 +6,6 @@ en:
           attributes:
             email:
               blank: "I need an email to respond to you."
+              invalid: "Oops. Looks like that isnt a valid email."
+            message:
+              blank: "Why submit an enquiry without a message?"

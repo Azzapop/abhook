@@ -1,13 +1,17 @@
-.enquiry-form {
+#enquiry-form {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (max-width: 800px) {
-  .enquiry-form {
+  #enquiry-form {
     width: 75%;
   }
+}
+
+#enquiry-form .notice {
+  padding: 5px 20px;
 }
 
 input[type=text],

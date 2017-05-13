@@ -13,11 +13,11 @@ RSpec.describe EnquiryController, type: :controller do
         process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:enquiry) }
         expect(response.status).to eq(200)
       end
-      it 'returns a json object containing status => success' do
-        expected_response = { status: 'success' }
+      it 'returns a json object containing success => true' do
+        expected_response = { success: true }
         process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:enquiry) }
         actual_response = JSON.parse(response.body, symbolize_names: true)
-        expect(actual_response[:status]).to eq(expected_response[:status])
+        expect(actual_response[:success]).to eq(expected_response[:success])
       end
     end
     context 'with invalid attributes' do
@@ -30,14 +30,14 @@ RSpec.describe EnquiryController, type: :controller do
         process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:invalid_enquiry) }
         expect(response.status).to eq(400)
       end
-      it 'returns a json object containing status => error' do
-        expected_response = { status: 'error' }
+      it 'returns a json object containing success => false' do
+        expected_response = { success: false }
         process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:invalid_enquiry) }
         actual_response = JSON.parse(response.body, symbolize_names: true)
-        expect(actual_response[:status]).to eq(expected_response[:status])
+        expect(actual_response[:success]).to eq(expected_response[:success])
       end
-      it 'returns a json object container a list of errors' do
-        expected_response = { errors: ['I need an email to respond to you.'] }
+      it 'returns a json object containing a hash of objects with a list of errors' do
+        expected_response = { errors: { email: ['I need an email to respond to you.'] } }
         process :create, method: :post, params: { enquiry: FactoryGirl.attributes_for(:invalid_enquiry) }
         actual_response = JSON.parse(response.body, symbolize_names: true)
         expect(actual_response[:errors]).to eq(expected_response[:errors])
