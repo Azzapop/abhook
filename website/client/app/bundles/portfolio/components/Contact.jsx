@@ -57,26 +57,40 @@ class App extends Component {
     });
   }
 
+  dismissSuccess() {
+    this.setState({ success: false });
+  }
+
   renderSuccess() {
     const { success } = this.state;
     if (success) {
       return (
         <div className='notice info' id='note'>
-          <div className='dismiss'><i className='fa fa-close'></i></div>
+          <div className='dismiss' onClick={ () => this.dismissSuccess() }><i className='fa fa-close'></i></div>
           <span>Looks like I have your enquiry. Thanks! : {')'}</span>
         </div>
       );
     }
   }
 
+  dismissError(type, err) {
+    const { errors } = this.state;
+    this.setState({
+      errors: {
+        ...errors,
+        [type]: _.without(errors[type], err)
+      }
+    })
+  }
+
   renderErrors() {
     const { errors } = this.state;
+    const _this = this;
     return _.map(errors, function(errs, type) {
       return _.map(errs, function(err) {
-        // TODO change so that dismiss is react based
         return (
-          <div key={ err } className='notice error' id='note'>
-            <div className='dismiss'><i className='fa fa-close'></i></div>
+          <div key={ err } className='notice error'>
+            <div className='dismiss' onClick={ () => _this.dismissError(type, err) }><i className='fa fa-close'></i></div>
             <span><b>{ type }:</b> { err }</span>
           </div>
         );
