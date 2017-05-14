@@ -6,5 +6,6 @@ class PortfolioController < ApplicationController
   end
 
   def blog
+    @posts = Post.all
   end
 end

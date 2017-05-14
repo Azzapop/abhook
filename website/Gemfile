@@ -17,6 +17,7 @@ gem 'pg'
 gem "react_on_rails", "~> 6"
 gem 'slim'
 gem "font-awesome-rails"
+gem 'friendly_id'
 
 
 group :development do
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
+  gem 'rails-controller-testing'
   gem 'factory_girl_rails', '~> 4.2.1'
 end
 
