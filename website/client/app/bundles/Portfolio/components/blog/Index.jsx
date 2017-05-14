@@ -8,7 +8,7 @@ class Index extends Component {
 
   render() {
     return (
-      <Link href='/blog/test-post'>Go to post</Link>
+      <Link to='/blog/test-post'>Go to post</Link>
     );
   }
 }
