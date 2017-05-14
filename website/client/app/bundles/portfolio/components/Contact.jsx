@@ -32,12 +32,10 @@ class App extends Component {
 
   submitEnquiry() {
     // remove all current errors
-    this.setState({
-      errors: {
-        email: [],
-        message: []
-      }
-    });
+    const errors = {
+      email: [],
+      message: []
+    };
 
     const csrfToken = ReactOnRails.authenticityToken();
     const { enquiry } = this.state;
@@ -50,13 +48,15 @@ class App extends Component {
         enquiry: {
           email: '',
           message: ''
-        }
+        },
+        errors: errors
       });
     }).catch(function(error) {
       const { data } = error.response;
       _this.setState({
         success: data.success,
         errors: {
+          ...errors,
           ...data.errors
         }
       });
@@ -86,7 +86,7 @@ class App extends Component {
         ...errors,
         [type]: _.without(errors[type], err)
       }
-    })
+    });
   }
 
   renderErrors() {
@@ -106,6 +106,7 @@ class App extends Component {
 
   render() {
     const { email, message } = this.state.enquiry;
+    const { errors } = this.state;
     return (
       <div id='enquiry-form'>
         <div className='row'>
@@ -120,10 +121,10 @@ class App extends Component {
             }
           </div>
           <div className='box col-6'>
-            <input type='text' value={ email } onChange={ (e) => this.updateEnquiry({ email: e.target.value  }) } placeholder='email' />
+            <input className={ errors.email.length > 0 ? 'input-error': '' } type='text' value={ email } onChange={ (e) => this.updateEnquiry({ email: e.target.value  }) } placeholder='email' />
           </div>
           <div className='box col-12'>
-            <textarea value={ message } onChange={ (e) => this.updateEnquiry({ message: e.target.value }) } placeholder='message' />
+            <textarea className={ errors.message.length > 0 ? 'input-error': '' } value={ message } onChange={ (e) => this.updateEnquiry({ message: e.target.value }) } placeholder='message' />
           </div>
           <div className='box col-1'>
             <button type='submit' className='btn dark clean' onClick={ () => this.submitEnquiry() }>Submit</button>
