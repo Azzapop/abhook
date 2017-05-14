@@ -12,4 +12,4 @@ nav.nav.bar.thick.fixed
     li
       a href="#{ contact_path }" class="#{ 'active' if current_page?(contact_path) }" Contact
     li
-      a href="#{ blog_path }" class="#{ 'active' if current_page?(blog_path) }" Blog
+      a href="#{ blog_path }" class="#{ 'active' if controller_name == 'portfolio' && action_name == 'blog' }" Blog
