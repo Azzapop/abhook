@@ -4,7 +4,7 @@ import ReactOnRails from 'react-on-rails';
 import axios from 'axios';
 import _ from 'lodash';
 
-class App extends Component {
+class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -135,4 +135,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Contact;
