@@ -13,6 +13,7 @@ const config = {
     'es5-shim/es5-shim',
     'es5-shim/es5-sham',
     'babel-polyfill',
+    // TODO solve client vs server registration / rendering
     './app/bundles/Portfolio/startup/clientRegistration',
   ],
 
