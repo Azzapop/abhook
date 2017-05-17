@@ -6,9 +6,16 @@ class Blog extends Component {
   }
 
   render() {
+    const { posts } = this.props.route;
+    const children = React.Children.map(this.props.children, function(child) {
+      return React.cloneElement(child, {
+        posts: posts
+      });
+    });
+
     return (
       <div>
-        { this.props.children }
+        { children }
       </div>
     );
   }

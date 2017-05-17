@@ -7,9 +7,9 @@ import Post from '../components/blog/Post.jsx';
 
 export default (props) => {
   return (
-    <Route path="/blog" component={ Blog } posts={ props.posts } pinnedPosts={ props.pinned_posts }>
+    <Route path="/blog" component={ Blog } posts={ props.posts }>
       <IndexRoute component={ Index } />
-      <Route path="/blog/:post_id" component={ Post } />
+      <Route path="/blog/:postId" component={ Post } />
     </Route>
   );
 };

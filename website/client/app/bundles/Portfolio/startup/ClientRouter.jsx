@@ -5,7 +5,7 @@ import routes from '../routes/routes.jsx';
 
 export default (props, _railsContext) => {
   return (
-    <Router history={ browserHistory } test={ props }>
+    <Router history={ browserHistory }>
       { routes(props) }
     </Router>
   );
