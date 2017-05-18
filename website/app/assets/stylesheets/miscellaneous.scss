@@ -8,3 +8,22 @@
 .input-error {
   border-color: #E93F3C !important;
 }
+
+.container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
+}
+
+
+// add custom font awesome rotation size
+.fa-rotate-45 {
+  filter: none;
+  transform: rotate(-45deg);
+}
