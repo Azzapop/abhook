@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170514111419) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "slug"
-    t.text     "blurb"
+    t.string   "blurb"
     t.text     "content"
     t.boolean  "pinned",     default: false
     t.datetime "created_at",                 null: false

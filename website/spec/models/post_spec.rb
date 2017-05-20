@@ -21,6 +21,12 @@ RSpec.describe Post, type: :model do
     )
     expect(p.slug).not_to be_nil
   end
+  it 'should automatically generate a blurb' do
+    p = Post.create(
+      FactoryGirl.attributes_for(:post)
+    )
+    expect(p.blurb).not_to be_nil
+  end
   it 'should be invalid without a title' do
     p = Post.create(title: nil)
     expect(p).to be_invalid
