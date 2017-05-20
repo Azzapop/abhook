@@ -8,9 +8,19 @@ class Index extends Component {
   constructor(props) {
     super(props);
     const { posts } = props;
+    let error;
+    if (props.location.state) error = props.location.state;
     this.state = {
-      posts: _.orderBy(posts, ['pinned', 'created_at'], ['desc', 'desc'])
+      posts: _.orderBy(posts, ['pinned', 'created_at'], ['desc', 'desc']),
+      error: error
     }
+  }
+
+  componentWillMount() {
+    this.props.router.replace({
+      ...this.props.location,
+      state: undefined
+    });
   }
 
   renderPosts(posts) {
@@ -35,10 +45,25 @@ class Index extends Component {
     });
   }
 
+  renderError(error) {
+    if (error) {
+      return (
+        <div className='notice error blog-error'>
+          <div className='dismiss' onClick={ () => this.setState({ error: false }) }><i className='fa fa-close'></i></div>
+          <p>Oops!</p>
+          <p>Looks like that blog post doesn't exist. Maybe you can find what you were looking for below.</p>
+        </div>
+      );
+    }
+  }
+
   render() {
-    const { posts } = this.state;
+    const { posts, error } = this.state;
     return (
       <div className='container'>
+        {
+          this.renderError(error)
+        }
         {
           this.renderPosts(posts)
         }
