@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'portfolio#contact'
   get 'blog', to: 'portfolio#blog'
-  get "blog/:post_id", to: "portfolio#blog", as: :post
+  get "blog/*post_id", to: "portfolio#blog", as: :post
 
   post 'enquiry', to: 'enquiry#create'
 end
