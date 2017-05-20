@@ -11,11 +11,16 @@ export function validatePost(nextState, replace) {
   if (!post) replace({ pathname: '/blog', state: { redirectFrom: nextState.location.pathname, error: true } });
 }
 
+export function redirectError(nextState, replace) {
+  replace({ pathname: '/blog', state: { redirectFrom: nextState.location.pathname, error: true } });
+}
+
 export default (props) => {
   return (
     <Route path='/blog' component={ Blog } posts={ props.posts }>
       <IndexRoute component={ Index } />
-      <Route path='/blog/:postId*' component={ Post } onEnter={ validatePost.bind({ posts: props.posts }) } />
+      <Route path='/blog/:postId' component={ Post } onEnter={ validatePost.bind({ posts: props.posts }) } />
+      <Route path='/blog/:postId/*' component={ Index } onEnter={ redirectError } />
     </Route>
   );
 };
