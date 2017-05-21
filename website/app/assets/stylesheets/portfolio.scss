@@ -1,0 +1,22 @@
+.portrait {
+  max-width: 25%;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 800px) {
+  .portrait {
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.heading {
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+.sub-heading {
+  font-size: 20px;
+  margin-top: 0px;
+}
