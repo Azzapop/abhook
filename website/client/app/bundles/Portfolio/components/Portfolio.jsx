@@ -17,7 +17,20 @@ class Portfolio extends Component {
           </div>
         </div>
         <div className='row'>
-          <p>Showcase</p>
+          <div className='box col-12'>
+            <h2 className='section-heading'>Check out some of the things I've done</h2>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='box col-12 buttons'>
+            <a href='https://github.com/Azzapop' target='_blank' className='btn dark clean'>Github: Azzapop <i className='fa fa-github'></i></a>
+            <a href='' className='btn dark clean'>Resume <i className='fa fa-address-card-o'></i></a>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='box col-12'>
+            <p>showcase some work here</p>
+          </div>
         </div>
       </div>
     );
