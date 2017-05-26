@@ -1,24 +1,16 @@
-# README
+### [abhook.id.au](abhook.id.au)
+Code repository for my personal website. This site was built on rails, using the [React on Rails gem](https://github.com/shakacode/react_on_rails) to create React components for front-end use. Check-out their amazing docs for more info.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##### Tests
+Testing is done using rspec. Check the spec folder for all tests. Run the tests using `bundle exec rspec`.
 
-* Ruby version
 
-* System dependencies
+Files and the server are hosted on AWS.
 
-* Configuration
 
-* Database creation
+##### Deployment
+Mental Note, look into an integration service.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##### Feedback
+For feedback, pop me an email or head over to [my website](abhook.id.au/contact) and leave me some constructive criticism.
