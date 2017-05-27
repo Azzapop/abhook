@@ -1,6 +1,7 @@
 p.date.left
   / TODO convert to react component for dynamic time
-  = fa_icon('calendar', text: Date.today.strftime('%a, %d %B, %Y'))
+  / = fa_icon('calendar', text: Date.today.strftime('%a, %d %B, %Y'))
+  = react_component('Clock', props: {}, prerender: false)
 .flinks.right
   a target="_blank" href="https://www.linkedin.com/in/aaron-hook/"
     = fa_icon('linkedin-square lg', text: 'LinkedIn')
