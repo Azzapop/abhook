@@ -29,7 +29,22 @@ class Portfolio extends Component {
         </div>
         <div className='row'>
           <div className='box col-12'>
-            <p>showcase some work here</p>
+            <p>this website</p>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='box col-12'>
+            <p>coderfactory website</p>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='box col-12'>
+            <p>footnotes app</p>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='box col-12'>
+            <p>first rails project</p>
           </div>
         </div>
       </div>
