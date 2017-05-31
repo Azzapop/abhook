@@ -127,7 +127,7 @@ class Contact extends Component {
             <textarea className={ errors.message.length > 0 ? 'input-error': '' } value={ message } onChange={ (e) => this.updateEnquiry({ message: e.target.value }) } placeholder='message' />
           </div>
           <div className='box col-1'>
-            <button type='submit' className='btn dark clean' onClick={ () => this.submitEnquiry() }>Submit</button>
+            <button type='submit' className='btn info clean' onClick={ () => this.submitEnquiry() }>Submit</button>
           </div>
         </div>
       </div>
