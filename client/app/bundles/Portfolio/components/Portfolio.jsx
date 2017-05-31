@@ -34,19 +34,25 @@ class Portfolio extends Component {
         </div>
         <div className='row'>
           <div className='box col-12'>
-            <h5><a href='coderfactoryacademy.edu.au' target='_blank'>coderfactoryacademy.edu.au</a></h5>
+            <h5><a href='https://coderfactoryacademy.edu.au' target='_blank'>coderfactoryacademy.edu.au</a></h5>
             <p>My first major project after graduation. The Coder Factory Academy website was built using Ruby on Rails. I worked with both the designer, and marketing and academic staff to design and create a website that would capture the required customer data as well as allow users to accurately locate which courses are right for them. It features a fully operational booking system, with payment integration through Stripe, as well as a custom integration using the HubSpot API to deliver customer data to the HubSpot CRM. More recently we have implemented a new Online Course which required the creation of an online video delivery system, to provide a sophisticated, functional experience to assisst with their learning.</p>
           </div>
         </div>
         <div className='row'>
           <div className='box col-12'>
-            <h5><a href='thefootnotes-quiz.com.au' target='_blank'>thefootnotes-quiz.com.au</a></h5>
+            <h5><a href='http://thefootnotes-quiz.com.au' target='_blank'>thefootnotes-quiz.com.au</a></h5>
             <p>The first fully fledged React app that I deployed to production. After the footnotes came to us in need of an online quiz, we decided this would be the best opportunity to test my new React skills. I feel React worked well for this, as we were able to effortlessly manage the quiz status, by upddating the state to track which questions had been answered and whether they had been answered correctly or not. Rather than go through the tedium of creating a new app from scrath, we decided to use the <a href='https://github.com/facebookincubator/create-react-app' target='_blank'>create-react-app</a> generater to handle the framework creation for us.</p>
           </div>
         </div>
         <div className='row'>
           <div className='box col-12'>
-            <h2 className='section-heading section-break'>Here's some of the things I've done</h2>
+            <h2 className='section-heading section-break'>And here's some of the cool things I've done</h2>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='box col-12'>
+            <h5><a href='https://github.com/twlevelup/green_team_watch' target='_blank'>2015 - ThoughtWorks LevelUp</a></h5>
+            <p>In 2015 I participated in an exprience program at ThoughtWorks called LevelUp. Our project team consisted of an Experience Designer, a few Business Analyists, and several Software Developers. Throughout the project we were coached on various aspects of the industry, such as continous delivery / integration, the correct way to pair program and test driven development. We worked as a team, to discover a solution to providing engaging education to indiginous children through a smart watch app. Once we had our solution we worked to design the app and use a kanban board to distribute each individual task as it was borken down to the various pair programming teams.</p>
           </div>
         </div>
       </div>
