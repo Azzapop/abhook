@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Promise from 'bluebird';
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -8,43 +9,43 @@ class Commit extends Component {
     super(props);
     this.state = {
       loading: true,
-      commit: {}
+      commit: {
+        url: '',
+        avatar_url: '',
+        sha: ''
+      }
     }
   }
 
   componentWillMount() {
-    // TODO clean this method up
-    const query = axios.get('https://api.github.com/users/Azzapop/events');
-    const _this = this;
-    query.then(function(result) {
+    const query = axios.get('https://api.github.com/repos/Azzapop/personal_website/commits');
+    Promise.resolve(query).bind(this).then((result) => {
       const { data } = result;
-      _.forEach(data, (datum) => {
-        const { commits } = datum.payload;
-        if (commits) {
-          const commit = commits[0];
-          const _query = axios.get(commit.url);
-          _query.then(function(_result) {
-            _this.setState({
-              loading: false,
-              commit: _result.data
-            });
-          }).catch(function(_error) {
-            console.log('ERR: ', _error);
-          });
-          return false;
+      const commit = _.find(data, (datum) => { return datum.commit.author.name === "Azzapop" });
+      this.setState({
+        loading: false,
+        commit: {
+          url: commit.html_url,
+          avatar_url: commit.author.avatar_url,
+          sha: commit.sha
         }
       });
-    }).catch(function(error) {
-      console.log('ERR: ', error)
+    }).catch((error) => {
+      console.log('ERR:', error);
     });
   }
 
   render() {
     const { loading, commit } = this.state;
-    console.log(commit);
     if (loading) return <span>loading latest commit</span>;
     else return (
-      <span>test</span>
+      <a target='_blank' href={ commit.url }>
+        <img className='img' src={ commit.avatar_url } />
+        <div className='details'>
+          <span className='name'>Aaron Hook</span>
+          <span className='commit'>{ commit.sha }</span>
+        </div>
+      </a>
     );
   }
 }
