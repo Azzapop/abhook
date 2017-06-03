@@ -50,28 +50,39 @@
   align-items: center;
 }
 
-.navbar > .personal-brand > a {
+.navbar > .personal-brand a {
   padding: 4px 12px !important;
   margin-right: 25px;
-  line-height: 20px;
+  line-height: 15px;
   border-radius: 5px;
 }
 
 @media (max-width: 800px) {
-  .navbar > .personal-brand > a {
-    margin: 6px 25px !important;
+  .navbar > .personal-brand a {
+    margin: 3px 20px !important;
+    margin-left: 0px !important;
   }
 }
 
-.personal-brand > a > img {
+.personal-brand a > img {
+  display: inline-block;
   height: 20px;
   width: 20px;
   padding: 2px;
   margin-right: 5px;
   border-radius: 5px;
-  vertical-align: bottom;
 }
 
-.personal-brand > a > span.name {
+.personal-brand a > .details {
+  display: inline-block;
+}
+
+.personal-brand a > .details > span.name {
+  display: block;
   font-size: 13px;
+}
+
+.personal-brand a > .details > span.commit {
+  display: block;
+  font-size: 10px;
 }
