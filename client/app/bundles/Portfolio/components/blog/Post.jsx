@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Linkify from 'react-linkify';
 import { Link } from 'react-router';
-
 import moment from 'moment';
 import _ from 'lodash';
 

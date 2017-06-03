@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
 import moment from 'moment';
 import _ from 'lodash';
 
@@ -13,10 +12,11 @@ class Index extends Component {
     this.state = {
       posts: _.orderBy(posts, ['pinned', 'created_at'], ['desc', 'desc']),
       error: error
-    }
+    };
   }
 
   componentWillMount() {
+    // Clear the router state when the given post doesn't exist
     this.props.router.replace({
       ...this.props.location,
       state: undefined

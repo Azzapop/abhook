@@ -7,6 +7,7 @@ class Portfolio extends Component {
 
   render() {
     // TODO add link to resume
+    // TODO programmatically get url for github photo
     return (
       <div className='container'>
         <div className='row'>

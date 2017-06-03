@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactOnRails from 'react-on-rails';
-
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -17,7 +16,7 @@ class Contact extends Component {
         message: []
       },
       success: false
-    }
+    };
   }
 
   updateEnquiry(data) {
@@ -40,10 +39,9 @@ class Contact extends Component {
     const csrfToken = ReactOnRails.authenticityToken();
     const { enquiry } = this.state;
     const query = axios.post('/enquiry', { enquiry: enquiry, authenticity_token: csrfToken })
-    const _this = this;
-    query.then(function(response) {
+    query.then((response) => {
       const { data } = response;
-      _this.setState({
+      this.setState({
         success: data.success,
         enquiry: {
           email: '',
@@ -51,9 +49,9 @@ class Contact extends Component {
         },
         errors: errors
       });
-    }).catch(function(error) {
+    }).catch((error) => {
       const { data } = error.response;
-      _this.setState({
+      this.setState({
         success: data.success,
         errors: {
           ...errors,
@@ -91,12 +89,11 @@ class Contact extends Component {
 
   renderErrors() {
     const { errors } = this.state;
-    const _this = this;
-    return _.map(errors, function(errs, type) {
-      return _.map(errs, function(err) {
+    return _.map(errors, (errs, type) => {
+      return _.map(errs, (err) => {
         return (
           <div key={ err } className='notice error'>
-            <div className='dismiss' onClick={ () => _this.dismissError(type, err) }><i className='fa fa-close'></i></div>
+            <div className='dismiss' onClick={ () => this.dismissError(type, err) }><i className='fa fa-close'></i></div>
             <span><b>{ type }:</b> { err }</span>
           </div>
         );

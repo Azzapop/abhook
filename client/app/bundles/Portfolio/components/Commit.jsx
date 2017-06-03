@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import Promise from 'bluebird';
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -14,12 +12,12 @@ class Commit extends Component {
         avatar_url: '',
         sha: ''
       }
-    }
+    };
   }
 
   componentWillMount() {
     const query = axios.get('https://api.github.com/repos/Azzapop/personal_website/commits');
-    Promise.resolve(query).bind(this).then((result) => {
+    query.then((result) => {
       const { data } = result;
       const commit = _.find(data, (datum) => { return datum.commit.author.name === "Azzapop" });
       this.setState({
@@ -37,7 +35,7 @@ class Commit extends Component {
 
   render() {
     const { loading, commit } = this.state;
-    if (loading) return <span>loading latest commit</span>;
+    if (loading) return <p>loading latest commit</p>;
     else return (
       <a target='_blank' href={ commit.url }>
         <img className='img' src={ commit.avatar_url } />
