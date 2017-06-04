@@ -1,3 +1,4 @@
+= content_for :type, @post.present? ? 'article' : 'blog'
 = content_for :title, @post.present? ? @post.title : 'Blog | abhook.id.au | Aaron Hook | Software Developer'
 = content_for :description, @post.present? ? @post.blurb : 'It\'s the blog! Here I write about all the cool things I do / am doing / am going to do.'
 
