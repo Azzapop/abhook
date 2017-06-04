@@ -1,8 +1,13 @@
 doctype html
 html
   head
-    title abhook.id.au | Aaron Hook | Software Developer
+    - base_title = 'abhook.id.au | Aaron Hook | Software Developer'
+    title #{ content_for(:title) ? yield(:title) : base_title }
 
+    meta property="og:url" content=request.original_url
+    meta property="og:type" content="#{ content_for?(:type) ? yield(:type) : 'website' }"
+    meta property="og:title" content="#{ content_for?(:title) ? yield(:title) : base_title }"
+    meta property="og:description" content="#{ content_for(:description) ? yield(:description) : 'Hi! My name\'s Aaron Hook and I\'m a software developer based in Sydney. Inside you\'ll find a whole bunch more info about me and if you checkout my blog you can see what I\'ve been up to.' }"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = csrf_meta_tags
 
