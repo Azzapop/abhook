@@ -11,13 +11,13 @@ class Portfolio extends Component {
       <div className='container'>
         <div className='row'>
           <div className='box col-12'>
-            <img className='img thumbnail round left portrait' src='https://files.abhook.id.au/store/images/10502077_10201515273042966_129626617606738027_n.jpg' />
+            <img className='img thumbnail round left portrait' src='https://res.cloudinary.com/abhook/image/upload/v1496833315/10502077_10201515273042966_129626617606738027_n_p8bsw8.jpg' />
             <h2 className='heading'>Aaron Hook</h2>
             <h1 className='sub-heading'>Software Developer</h1>
             <p>Hey there! Welcome to abhook.id.au! My name is Aaron Hook and I'm the owner of this fine establishment. In high school I began to learn the joy of coding from my teacher, and took every computer science course I possibly could. Once I had graduated high school it was only natural I continued my studies, recieving a scholarship from the University of Sydney. I graduated in 2016 with a Bachelor of Computer Science and Technology. Ever since I've been developing my skills and working to produce the best projects I can.</p>
             <div className='buttons'>
               <a href='https://github.com/Azzapop' target='_blank' className='btn info clean'>Github: Azzapop <i className='fa fa-github'></i></a>
-              <a href='https://files.abhook.id.au/store/Aaron+CV.pdf' target='_blank' className='btn info clean'>Resume <i className='fa fa-address-card-o'></i></a>
+              <a href='https://res.cloudinary.com/abhook/image/upload/v1496833330/Aaron_CV_qt7nvq.pdf' target='_blank' className='btn info clean'>Resume <i className='fa fa-address-card-o'></i></a>
             </div>
           </div>
         </div>
