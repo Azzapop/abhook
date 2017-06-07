@@ -1,5 +1,0 @@
-app/views/shared/_footer.slim
-client/app/bundles/Portfolio/components/Contact.jsx
-spec/controllers/enquiry_controller_spec.rb
-
-TODO dont include node_modules next time
