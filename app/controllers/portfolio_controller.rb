@@ -8,6 +8,5 @@ class PortfolioController < ApplicationController
   def blog
     @posts = Post.all
     @post = Post.find_by(slug: params[:post_id]) if params[:post_id]
-    puts @post.present?
   end
 end

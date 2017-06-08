@@ -2,17 +2,15 @@ require 'rails_helper'
 
 RSpec.describe Enquiry, type: :model do
   it 'should have a valid factory' do
-    e = FactoryGirl.build(:enquiry)
+    e = build(:enquiry)
     expect(e).to be_valid
   end
   it 'should have an invalid factory' do
-    e = FactoryGirl.build(:invalid_enquiry)
+    e = build(:invalid_enquiry)
     expect(e).to be_invalid
   end
   it 'should be valid with an email and message' do
-    e = Enquiry.create(
-      FactoryGirl.attributes_for(:enquiry)
-    )
+    e = Enquiry.create(attributes_for(:enquiry))
     expect(e).to be_valid
   end
   it 'should be invalid without an email' do

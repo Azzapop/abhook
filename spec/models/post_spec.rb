@@ -2,29 +2,23 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   it 'should have a valid factory' do
-    p = FactoryGirl.build(:post)
+    p = build(:post)
     expect(p).to be_valid
   end
   it 'should have an invalid factory' do
-    p = FactoryGirl.build(:invalid_post)
+    p = build(:invalid_post)
     expect(p).to be_invalid
   end
   it 'should have be valid with a title and content' do
-    p = Post.create(
-      FactoryGirl.attributes_for(:post)
-    )
+    p = Post.create(attributes_for(:post))
     expect(p).to be_valid
   end
   it 'should automatically generate a slug' do
-    p = Post.create(
-      FactoryGirl.attributes_for(:post)
-    )
+    p = Post.create(attributes_for(:post))
     expect(p.slug).not_to be_nil
   end
   it 'should automatically generate a blurb' do
-    p = Post.create(
-      FactoryGirl.attributes_for(:post)
-    )
+    p = Post.create(attributes_for(:post))
     expect(p.blurb).not_to be_nil
   end
   it 'should be invalid without a title' do
@@ -57,9 +51,7 @@ RSpec.describe Post, type: :model do
     expect(p.pinned).to eq(false)
   end
   it 'should be valid when pinned and not pinned' do
-    p = Post.create(
-      FactoryGirl.attributes_for(:post)
-    )
+    p = Post.create(attributes_for(:post))
     p.update_attribute(:pinned, false)
     expect(p).to be_valid
     p.update_attribute(:pinned, true)

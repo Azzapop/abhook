@@ -21,7 +21,7 @@ RSpec.describe PortfolioController, type: :controller do
       expect(response).to render_template(:blog)
     end
     it 'gets a list of all the blog posts' do
-      post1, post2 = FactoryGirl.create(:post), FactoryGirl.create(:post)
+      post1, post2 = create(:post), create(:post)
       process :blog, method: :get
       expect(assigns[:posts]).to match_array([post2, post1])
     end
