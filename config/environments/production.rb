@@ -56,6 +56,21 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "website_#{Rails.env}"
   config.action_mailer.perform_caching = false
+  config.action_mailer.async = true
+
+  config.action_mailer.default_url_options = { :host => 'https://abhook.id.au' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+    :port           => 587,
+    :address        => 'smtp.mailgun.org',
+    :user_name      => ENV['MAILGUN_USER_NAME'],
+    :password       => ENV['MAILGUN_PASSWORD'],
+    :domain         => 'mg.abhook.id.au',
+    :authentication => :plain
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
