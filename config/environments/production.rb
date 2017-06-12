@@ -56,7 +56,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "website_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.async = true
 
   config.action_mailer.default_url_options = { :host => 'https://abhook.id.au' }
   config.action_mailer.delivery_method = :smtp
