@@ -38,7 +38,10 @@ class Contact extends Component {
 
     const csrfToken = ReactOnRails.authenticityToken();
     const { enquiry } = this.state;
-    const query = axios.post('/enquiry', { enquiry: enquiry, authenticity_token: csrfToken })
+    const query = axios.post('/enquiry', {
+      enquiry: enquiry,
+      authenticity_token: csrfToken
+    });
     query.then((response) => {
       const { data } = response;
       this.setState({
@@ -70,7 +73,9 @@ class Contact extends Component {
     if (success) {
       return (
         <div className='notice info' id='note'>
-          <div className='dismiss' onClick={ () => this.dismissSuccess() }><i className='fa fa-close'></i></div>
+          <div className='dismiss' onClick={ () => this.dismissSuccess() }>
+            <i className='fa fa-close'></i>
+          </div>
           <span>Looks like I have your enquiry. Thanks! : {')'}</span>
         </div>
       );
@@ -93,7 +98,10 @@ class Contact extends Component {
       return _.map(errs, (err) => {
         return (
           <div key={ err } className='notice error'>
-            <div className='dismiss' onClick={ () => this.dismissError(type, err) }><i className='fa fa-close'></i></div>
+            <div className='dismiss'
+              onClick={ () => this.dismissError(type, err) }>
+              <i className='fa fa-close'></i>
+            </div>
             <span><b>{ type }:</b> { err }</span>
           </div>
         );
@@ -104,6 +112,7 @@ class Contact extends Component {
   render() {
     const { email, message } = this.state.enquiry;
     const { errors } = this.state;
+    const err = 'input-error';
     return (
       <div id='enquiry-form'>
         <div className='row'>
@@ -117,14 +126,29 @@ class Contact extends Component {
               this.renderErrors()
             }
           </div>
+          <div className='box col-12'>
+            <p>
+              Need to get in contact?
+              Leave a message below and I'll be in touch.
+            </p>
+          </div>
           <div className='box col-6'>
-            <input className={ errors.email.length > 0 ? 'input-error': '' } type='text' value={ email } onChange={ (e) => this.updateEnquiry({ email: e.target.value  }) } placeholder='email' />
+            <input className={ errors.email.length > 0 ? err : '' }
+              type='text' value={ email }
+              onChange={ (e) => this.updateEnquiry({ email: e.target.value  }) }
+              placeholder='email' />
           </div>
           <div className='box col-12'>
-            <textarea className={ errors.message.length > 0 ? 'input-error': '' } value={ message } onChange={ (e) => this.updateEnquiry({ message: e.target.value }) } placeholder='message' />
+            <textarea className={ errors.message.length > 0 ? err : '' }
+              value={ message }
+              onChange={ (e) => this.updateEnquiry({ message: e.target.value }) }
+              placeholder='message' />
           </div>
           <div className='box col-1'>
-            <button type='submit' className='btn info clean' onClick={ () => this.submitEnquiry() }>Submit</button>
+            <button type='submit' className='btn info clean'
+              onClick={ () => this.submitEnquiry() }>
+              Submit
+            </button>
           </div>
         </div>
       </div>
