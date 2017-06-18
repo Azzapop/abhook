@@ -3,12 +3,11 @@ nav.nav.bar.thick.fixed
     li.collapse
       a.menu href="#"
         = fa_icon('bars')
-    .personal-brand.right
-      = react_component("Commit")
-    .right
     li
       a href="#{ root_path }" class="#{ 'active' if current_page?(root_path) }" Portfolio
     li
       a href="#{ contact_path }" class="#{ 'active' if current_page?(contact_path) }" Contact
     li
       a href="#{ blog_path }" class="#{ 'active' if controller_name == 'portfolio' && action_name == 'blog' }" Blog
+    li.personal-brand.right
+      = react_component("Commit")

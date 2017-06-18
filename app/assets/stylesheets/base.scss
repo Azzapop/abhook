@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  height: calc(100% - 200px);
+  height: 100%;
   background-color: $white;
   margin: 0px;
 }
@@ -26,8 +26,8 @@ img {
 }
 
 .body {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .footer {

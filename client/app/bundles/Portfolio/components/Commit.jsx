@@ -38,7 +38,7 @@ class Commit extends Component {
     if (loading) return <p>loading latest commit</p>;
     else return (
       <a target='_blank' href={ commit.url }>
-        <img className='img' src={ commit.avatar_url } />
+        <img className='img' src={ commit.avatar_url } alt='profile image'/>
         <div className='details'>
           <span className='name'>Aaron Hook</span>
           <span className='commit'>{ commit.sha }</span>
